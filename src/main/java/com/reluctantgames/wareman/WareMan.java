@@ -1,6 +1,7 @@
 package com.reluctantgames.wareman;
 
 import com.mojang.logging.LogUtils;
+import com.reluctantgames.wareman.common.ShuttleBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
@@ -32,8 +33,10 @@ public class WareMan
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
 
     public static final RegistryObject<Block> EXAMPLE_BLOCK = WareMan.BLOCKS.register("example_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-
     public static final RegistryObject<Item> EXAMPLE_BLOCK_ITEM = WareMan.ITEMS.register("example_block", () -> new BlockItem(EXAMPLE_BLOCK.get(), new Item.Properties()));
+
+    public static final RegistryObject<Block> SHUTTLE_BLOCK = WareMan.BLOCKS.register("shuttle_block", () -> new ShuttleBlock(BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistryObject<Item> SHUTTLE_BLOCK_ITEM = WareMan.ITEMS.register("shuttle_block", () -> new BlockItem(SHUTTLE_BLOCK.get(), new Item.Properties()));
 
     public WareMan()
     {
@@ -60,7 +63,10 @@ public class WareMan
 
     private void addCreative(CreativeModeTabEvent.BuildContents event)
     {
-        if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS)
+        if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(EXAMPLE_BLOCK_ITEM);
+            event.accept(SHUTTLE_BLOCK_ITEM);
+        }
+
     }
 }

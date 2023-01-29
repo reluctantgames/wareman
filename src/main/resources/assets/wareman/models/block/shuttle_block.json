@@ -1,0 +1,10 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "front": "wareman:block/shuttle_block_front",
+    "back": "wareman:block/shuttle_block_back",
+    "side": "wareman:block/shuttle_block_side",
+    "top": "wareman:block/shuttle_block_top",
+    "bottom": "wareman:block/shuttle_block_bottom"
+  }
+}
