@@ -1,6 +1,7 @@
 package com.reluctantgames.wareman;
 
 import com.mojang.logging.LogUtils;
+import com.reluctantgames.wareman.common.InterfaceBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
@@ -31,9 +32,8 @@ public class WareMan
     // Create a Deferred Register to hold Items which will all be registered under the "wareman" namespace
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
 
-    public static final RegistryObject<Block> EXAMPLE_BLOCK = WareMan.BLOCKS.register("example_block", () -> new Block(BlockBehaviour.Properties.of(Material.STONE)));
-
-    public static final RegistryObject<Item> EXAMPLE_BLOCK_ITEM = WareMan.ITEMS.register("example_block", () -> new BlockItem(EXAMPLE_BLOCK.get(), new Item.Properties()));
+    public static final RegistryObject<Block> INTERFACE_BLOCK = WareMan.BLOCKS.register("interface_block", () -> new InterfaceBlock(BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistryObject<Item> INTERFACE_BLOCK_ITEM = WareMan.ITEMS.register("interface_block", () -> new BlockItem(INTERFACE_BLOCK.get(), new Item.Properties()));
 
     public WareMan()
     {
@@ -60,7 +60,8 @@ public class WareMan
 
     private void addCreative(CreativeModeTabEvent.BuildContents event)
     {
-        if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS)
-            event.accept(EXAMPLE_BLOCK_ITEM);
+        if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(INTERFACE_BLOCK_ITEM);
+        }
     }
 }
