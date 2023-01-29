@@ -2,6 +2,7 @@ package com.reluctantgames.wareman;
 
 import com.mojang.logging.LogUtils;
 import com.reluctantgames.wareman.common.InterfaceBlock;
+import com.reluctantgames.wareman.common.ShuttleBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
@@ -35,6 +36,9 @@ public class WareMan
     public static final RegistryObject<Block> INTERFACE_BLOCK = WareMan.BLOCKS.register("interface_block", () -> new InterfaceBlock(BlockBehaviour.Properties.of(Material.STONE)));
     public static final RegistryObject<Item> INTERFACE_BLOCK_ITEM = WareMan.ITEMS.register("interface_block", () -> new BlockItem(INTERFACE_BLOCK.get(), new Item.Properties()));
 
+    public static final RegistryObject<Block> SHUTTLE_BLOCK = WareMan.BLOCKS.register("shuttle_block", () -> new ShuttleBlock(BlockBehaviour.Properties.of(Material.STONE)));
+    public static final RegistryObject<Item> SHUTTLE_BLOCK_ITEM = WareMan.ITEMS.register("shuttle_block", () -> new BlockItem(SHUTTLE_BLOCK.get(), new Item.Properties()));
+
     public WareMan()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -62,6 +66,8 @@ public class WareMan
     {
         if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(INTERFACE_BLOCK_ITEM);
+            event.accept(SHUTTLE_BLOCK_ITEM);
         }
+
     }
 }

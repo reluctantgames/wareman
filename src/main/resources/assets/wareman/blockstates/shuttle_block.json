@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "wareman:block/shuttle_block"
+    }
+  }
+}
