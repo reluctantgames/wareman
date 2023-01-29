@@ -1,0 +1,11 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "north": "wareman:block/interface_block_front",
+    "south": "wareman:block/interface_block_back",
+    "east": "wareman:block/interface_block_side",
+    "west": "wareman:block/interface_block_side",
+    "up": "wareman:block/interface_block_top",
+    "down": "wareman:block/interface_block_bottom"
+  }
+}

@@ -1,10 +1,11 @@
 {
-  "parent": "block/orientable",
+  "parent": "block/cube",
   "textures": {
-    "front": "wareman:block/shuttle_block_front",
-    "back": "wareman:block/shuttle_block_back",
-    "side": "wareman:block/shuttle_block_side",
-    "top": "wareman:block/shuttle_block_top",
-    "bottom": "wareman:block/shuttle_block_bottom"
+    "north": "wareman:block/shuttle_block_front",
+    "south": "wareman:block/shuttle_block_back",
+    "east": "wareman:block/shuttle_block_side",
+    "west": "wareman:block/shuttle_block_side",
+    "up": "wareman:block/shuttle_block_top",
+    "down": "wareman:block/shuttle_block_bottom"
   }
 }
